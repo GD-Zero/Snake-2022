@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7601457714332473971
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4827201431166174, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827201431166174, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827201431166174, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827201431166174, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827201431166174, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999857
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827201431166174, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0000000023283064
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827201431166174, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0016882718
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827201431166174, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000000018626451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827201431166174, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.193
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 95569300335820506, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: dbe9e083a672ee7488c1180f7e0e7dc3, type: 3}

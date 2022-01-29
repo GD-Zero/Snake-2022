@@ -1,0 +1,13 @@
+using UnityEngine;
+
+public class Food : MonoBehaviour
+{
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("SnakeMain"))
+        {
+            other.GetComponent<SnakeMovement>().AddTail();
+            Destroy(gameObject);
+        }
+    }
+}
