@@ -4,10 +4,10 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     private int score;
-    public Text scoreText;
-    public Text winScoreText;
-    public Text deathScoreText;
-    public Text pauseScoreText;
+    public Text scoreText, winScoreText, deathScoreText, pauseScoreText;
+    //public Text winScoreText;
+    //public Text deathScoreText;
+    //public Text pauseScoreText;
     void Start()
     {
         score = 0;    
@@ -26,6 +26,7 @@ public class Score : MonoBehaviour
         if (collision.tag == "Food")
         {
             score++;
+            PlayerPrefs.SetInt("Score", score);
         }
     } 
 }

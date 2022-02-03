@@ -10,11 +10,11 @@ public class WinScript : MonoBehaviour
     //    }
     //}
 
-    public GameObject WinPannel;
-    public GameObject Pause;
-    public GameObject Left;
-    public GameObject Right;
-    public GameObject Score;
+    public GameObject WinPannel, Pause, Left, Right, Score;
+    //public GameObject Pause;
+    //public GameObject Left;
+    //public GameObject Right;
+    //public GameObject Score;
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Win")

@@ -10,11 +10,11 @@ public class DeathScript : MonoBehaviour
     //    }
     //}
 
-    public GameObject DeathPanel;
-    public GameObject Pause;
-    public GameObject Left;
-    public GameObject Right;
-    public GameObject Score;
+    public GameObject DeathPanel, Pause, Left, Right, Score;
+    //public GameObject Pause;
+    //public GameObject Left;
+    //public GameObject Right;
+    //public GameObject Score;
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Death")
