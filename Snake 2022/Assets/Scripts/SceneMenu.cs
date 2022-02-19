@@ -10,7 +10,7 @@ public class SceneMenu : MonoBehaviour
     public GameObject Score;
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
     }
 

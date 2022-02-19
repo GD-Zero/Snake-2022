@@ -4,13 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject MainPanel, ClassicPanel, ArcadePanel, AdventurePanel, InfoPanel;
-    //public GameObject ClassicPanel;
-    //public GameObject ArcadePanel;
-    //public GameObject AdventurePanel;
-    //public GameObject InfoPanel;
+    public GameObject MainPanel, ClassicPanel, ArcadePanel, AdventurePanel, InfoPanel, AchievementsPanel, SettingsPanel, HelpPanel, SoundOn, SoundOff;
     public int mainScore, receivedScore;
     public Text mScoreText;
+    private bool isMute;
 
     public void Start()
     {
@@ -21,6 +18,8 @@ public class Menu : MonoBehaviour
         mScoreText.text = mainScore.ToString();
         receivedScore = 0;
         PlayerPrefs.SetInt("Score", receivedScore);
+        isMute = PlayerPrefs.GetInt("Mute") == 1;
+        AudioListener.pause = isMute;
     }
     public void LoadMainMenu()
     {
@@ -29,6 +28,9 @@ public class Menu : MonoBehaviour
         ArcadePanel.SetActive(false);
         AdventurePanel.SetActive(false);
         InfoPanel.SetActive(false);
+        AchievementsPanel.SetActive(false);
+        SettingsPanel.SetActive(false);
+        HelpPanel.SetActive(false);
     }
 
     public void LoadClassicMenu()
@@ -48,13 +50,42 @@ public class Menu : MonoBehaviour
         MainPanel.SetActive(false);
         AdventurePanel.SetActive(true);
     }
-
-    public void LoadInfoMenu()
+    public void LoadAchievementsPanel()
+    {
+        MainPanel.SetActive(false);
+        AchievementsPanel.SetActive(true);
+    }
+    public void LoadInfoPanel()
     {
         MainPanel.SetActive(false);
         InfoPanel.SetActive(true);
     }
-
+    public void LoadSettingsPanel()
+    {
+        MainPanel.SetActive(false);
+        SettingsPanel.SetActive(true);
+    }
+    public void LoadHelpPanel()
+    {
+        MainPanel.SetActive(false);
+        HelpPanel.SetActive(true);
+    }
+    public void SoundPlay()
+    {
+        isMute = !isMute;
+        AudioListener.pause = isMute;
+        PlayerPrefs.SetInt("Mute", isMute ? 1 : 0);
+        SoundOff.SetActive(true);
+        SoundOn.SetActive(false);
+    }
+    public void SoundPause()
+    {
+        isMute = !isMute;
+        AudioListener.pause = isMute;
+        PlayerPrefs.SetInt("Mute", isMute ? 1 : 0);
+        SoundOff.SetActive(false);
+        SoundOn.SetActive(true);
+    }
     public void Exit()
     {
         Application.Quit();
