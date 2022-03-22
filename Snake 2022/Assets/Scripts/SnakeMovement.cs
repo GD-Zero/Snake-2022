@@ -5,12 +5,12 @@ using UnityEngine.Events;
 public class SnakeMovement : MonoBehaviour
 { 
     public List<GameObject> tailObjects = new List<GameObject>();
-
     public float z_offset = 0.5f;
-    
     public GameObject TailPrefab;
+    public GameObject[] eatSounds;
+    public GameObject buffSound;
 
-    public UnityEvent OnEatFood;
+    //public UnityEvent OnEatFood;
 
     [Range(0, 30), SerializeField] public float Speed;
 
@@ -31,10 +31,12 @@ public class SnakeMovement : MonoBehaviour
 
     public void AddTail()
     {
+        int rand = Random.Range(0, eatSounds.Length);
+        Instantiate(eatSounds[rand], transform.position, Quaternion.identity);
         Vector3 newTailPositionition = tailObjects[tailObjects.Count-1].transform.position;
         newTailPositionition.z -= z_offset;
         tailObjects.Add(GameObject.Instantiate(TailPrefab,newTailPositionition, Quaternion.identity) as GameObject);
-        OnEatFood.Invoke();
+        //OnEatFood.Invoke();
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -53,14 +55,16 @@ public class SnakeMovement : MonoBehaviour
     }
     public IEnumerator fast()
     {
-        OnEatFood.Invoke();
+        //OnEatFood.Invoke();
+        Instantiate(buffSound, transform.position, Quaternion.identity);
         Time.timeScale = 2f;
         yield return new WaitForSeconds(5f);
         Time.timeScale = 1f;
     }
     public IEnumerator slow()
     {
-        OnEatFood.Invoke();
+        //OnEatFood.Invoke();
+        Instantiate(buffSound, transform.position, Quaternion.identity);
         Time.timeScale = 0.5f;
         yield return new WaitForSeconds(3f);
         Time.timeScale = 1f;
